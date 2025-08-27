@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 02:38:10 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/08/27 02:09:52 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/08/27 22:13:29 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_block_point	*ft_malloc_block(char *board, int *number_block,
 	int				flag;
 
 	flag = 1;
-	*number_block = 0;
 	fd = open(board, O_RDONLY);
 	while (read(fd, &c, 1) > 0 && c != '\n')
 		;

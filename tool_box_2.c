@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:52:09 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/08/27 20:37:35 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/08/27 22:39:16 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int	ft_check_square_1(int pos_y, int pos_x, t_block_point *block_array,
 		size--;
 	return (size);
 }
+
+
 
 int	ft_check_block_1(t_block_point *block_array, int *pos_y, int *pos_x)
 {

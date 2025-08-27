@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 03:18:10 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/08/27 17:50:07 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/08/27 23:37:47 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	int				board_size;
 	t_block_point	*block_array;
 	int				*memo_max_block;
-	int				edge[10] = {6, 6, 6, 6, 1, 0, 0, 0, 0, -1};
+	int				edge[10] = {5, 2, 2, 2, 0, 0, 0, 0, 0, -1};
 
 	memo_max_block = malloc(3 * sizeof(int));
 	board_size = 0;
