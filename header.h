@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 03:19:32 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/08/27 02:10:44 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/08/27 16:55:43 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ void			ft_update_edge_1(int *edge, t_block_point *block_point,
 // check for plays
 int				ft_check_block_1(t_block_point *block_array, int *pos_y,
 					int *pos_x);
-int				ft_check_square(int pos_y, int pos_x,
+int				ft_check_square_1(int pos_y, int pos_x,
 					t_block_point *block_array, int board_size);
-
+int			*ft_max_size_given_edge(int *edge, t_block_point *block_array,
+					int board_size,int *memo_max_block);
+int	*ft_memo_max_block(int pos_y, int pos_x, int max_size, int *memo_max_block);
 // display
 void			ft_show_edge(int *edge, int length);
 #endif

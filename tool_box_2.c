@@ -6,11 +6,12 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:52:09 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/08/27 02:57:39 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/08/27 16:56:18 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+#include <stdio.h>
 
 void	ft_update_edge_1(int *edge, t_block_point *block_point, int length)
 {
@@ -19,6 +20,7 @@ void	ft_update_edge_1(int *edge, t_block_point *block_point, int length)
 	index = length - 1;
 	if ((*block_point).visible != -1)
 	{
+		printf("block visible : %d", (*block_point).visible);
 		while (index > -1)
 		{
 			if (index <= (*block_point).pos_x
@@ -30,7 +32,9 @@ void	ft_update_edge_1(int *edge, t_block_point *block_point, int length)
 	}
 }
 
-int	ft_check_square(int pos_y, int pos_x, t_block_point *block_array,
+// void	ft_update_edge()
+
+int	ft_check_square_1(int pos_y, int pos_x, t_block_point *block_array,
 		int board_size)
 {
 	int	size;
@@ -78,15 +82,43 @@ int	ft_check_block_1(t_block_point *block_array, int *pos_y, int *pos_x)
 	return (flag);
 }
 
-void    ft_need_a_name(int *edge, t_block_point *block_array, int board_size, int *max_boxe)
+#include <stdio.h>
+
+int	*ft_max_size_given_edge(int *edge, t_block_point *block_array,
+		int board_size,int *memo_max_block)
 {
-    int index;
-    
-    index = 0;
-    while (index < board_size -1)
-    {
-        if (edge[index] != edge[index + 1])
-        
-    }
-    ft_check_square
+	int	index;
+	int	size;
+
+	index = 0;
+	size = 0;
+	// ft_show_edge(edge, board_size);
+	size = ft_check_square_1(edge[0] + 1, 0, block_array, board_size);
+	
+	if (size > memo_max_block[0])
+		memo_max_block = ft_memo_max_block(edge[0] + 1, 0, size, memo_max_block);
+	while (index < board_size - 1)
+	{
+		if (edge[index] != edge[index + 1])
+		{
+			size = ft_check_square_1(edge[index + 1] + 1, index + 1,
+					block_array, board_size);
+			printf("pos_y = %d, pos_x = %d, size = %d\n", edge[index + 1] + 1,
+				index + 1, size);
+		}
+		if (size > memo_max_block[0])
+			memo_max_block = ft_memo_max_block(edge[index + 1] + 1, index + 1, size, memo_max_block);
+		index++;
+	}
+	return (memo_max_block);
+}
+
+int	*ft_memo_max_block(int pos_y, int pos_x, int max_size, int *memo_max_block)
+{
+	
+	memo_max_block[0] = max_size;
+	memo_max_block[1] = pos_y;
+	memo_max_block[2] = pos_x;
+
+	return (memo_max_block);
 }
