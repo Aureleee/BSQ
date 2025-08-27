@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:00:53 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/08/27 16:24:26 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/08/27 17:49:54 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,8 @@ void	ft_show_edge(int *edge, int board_size)
 			write(1, "-", 1);
 			c = (-edge[index]) + '0';
 		}
-		else 
+		else
 			c = edge[index] + '0';
-
 		write(1, &c, 1);
 		write(1, ", ", 2);
 		index++;
