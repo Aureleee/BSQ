@@ -1,11 +1,34 @@
+# Project BSQ
 
-## Project BSQ
+This project is about solving the **Biggest Square Problem (BSQ)**.
+The goal is simple: given a board with obstacles, the program finds the largest possible square that can fit inside without touching any obstacles.
 
-Hello  Kheda, le fichier generator_board.sh s'execute ne faisant la commande
-> ./generator_board.sh x y d 
-avec **x** et **y** les dimensions du carre et **d** la densite :D.
+---
 
-a chaque execution il ecrit la sortie dans un fichier **board.txt** .  
+## How to use
 
+First, you can generate a board using the script:
 
-// This file is not meant to be push AURELE DONT BE DUMB PLEASE
+```bash
+./generator_board.sh x y d
+```
+
+- **x** → width of the board
+- **y** → height of the board
+- **d** → density of obstacles :D
+
+Each execution writes the output into a file called **board.txt**.
+(You can also edit **board.txt** manually if you want to play with custom boards.)
+
+Then, to run the program:
+
+```bash
+./a.out "board.txt"
+```
+
+---
+
+## Notes
+
+// This file is not meant to be pushed.
+**AURÈLE, DON’T BE DUMB PLEASE.** 
